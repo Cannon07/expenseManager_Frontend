@@ -1,0 +1,23 @@
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerRow {
+    width: 50% !important;
+}
+
+.newTranContainer {
+    width: 100%;
+}
+
+.dropdownDiv button {
+    width: 100% !important;
+}
+
+.addButtonDiv {
+    width: 100%;
+    margin-top: 1rem;
+}

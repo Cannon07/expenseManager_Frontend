@@ -2,7 +2,7 @@ import { Row } from "@nextui-org/react"
 import { useState, useMemo } from "react"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import styles from "./transactions.module.css";
+import styles from "./addNewTransaction.module.css";
 import { Input, Dropdown, css } from "@nextui-org/react";
 import { Textarea  } from '@nextui-org/react';
 import { Button } from '@nextui-org/react';
@@ -26,6 +26,15 @@ export const AddNewTransaction = (props) => {
     const inputStyle = {
         // color: '#$pink100',
         backgroundColor: 'white',
+        width: '100%',
+    }
+
+    const textAreaStyle = {
+        width: '100%',
+    }
+
+    const addButtonStyle = {
+        width: '50%',
     }
 
     const getCurrentDate = () => {
@@ -90,9 +99,9 @@ export const AddNewTransaction = (props) => {
     }
 
     return (
-        <div>
+        <div className={styles.mainContainer}>
             <h1>Create a new Transaction</h1>
-            <Row justify="center">
+            <Row justify="center" className={styles.containerRow}>
                 <div className={styles.newTranContainer}>
                     {/* <div>
                         <p>Date</p>
@@ -111,7 +120,7 @@ export const AddNewTransaction = (props) => {
                             value={transactionName}
                         />
                     </div>
-                    <div>
+                    <div className={styles.dropdownDiv}>
                         <p>Category</p>
                         <Dropdown>
                           <Dropdown.Button
@@ -154,15 +163,21 @@ export const AddNewTransaction = (props) => {
                         <p>Description (Optional)</p>
                         <Textarea
                             placeholder="Enter Description"
+                            css={textAreaStyle}
                             onChange={(event) => {
                                 setTransactionDescription(event.target.value)
                             }}
                         />
                     </div>
-                    <div>
-                    <Button color="success" auto onPress={handleTransaction}>
-                        Add Transaction
-                    </Button>
+                    <div className={styles.addButtonDiv}>
+                        <Button 
+                            color="success" 
+                            auto 
+                            onPress={handleTransaction}
+                            css={addButtonStyle}
+                        >
+                            Add Transaction
+                        </Button>
                     </div>
                 </div>
             </Row>
