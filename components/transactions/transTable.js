@@ -1,4 +1,9 @@
-import { Table, Row } from "@nextui-org/react";
+import { Table, Row, Col, Tooltip } from "@nextui-org/react";
+import { EditIcon } from "./EditIcon";
+import { DeleteIcon } from "./DeleteIcon";
+import { IconButton } from "./IconButton";
+import styles from "./transactions.module.css";
+import { GetTransactions } from "../constants/urls";
 
 export const TransTable = (props) => {
   const headerStyle = {
@@ -7,6 +12,25 @@ export const TransTable = (props) => {
   };
   const rowStyle = {
     color: "white",
+  };
+
+  const deleteTransaction = async (key) => {
+    console.log(key);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append(
+      "Cookie",
+      "ARRAffinity=ab52746cee3d2041a0a4d964700673b28428853c105b7c164f6460eb8129960d; ARRAffinitySameSite=ab52746cee3d2041a0a4d964700673b28428853c105b7c164f6460eb8129960d"
+    );
+
+    var requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    let response = await fetch(`${GetTransactions}/${key}`, requestOptions);
   };
 
   return (
@@ -27,6 +51,7 @@ export const TransTable = (props) => {
             <Table.Column>CATEGORY</Table.Column>
             <Table.Column>DATE</Table.Column>
             <Table.Column>DESCRIPTION</Table.Column>
+            <Table.Column>ACTIONS</Table.Column>
           </Table.Header>
           <Table.Body>
             {props.transData.map((data) => {
@@ -44,6 +69,26 @@ export const TransTable = (props) => {
                   ) : (
                     <Table.Cell>NA</Table.Cell>
                   )}
+                  <Table.Cell>
+                    <Col className={styles.toolTip}>
+                      <Tooltip content="Edit user">
+                        <IconButton
+                          onClick={() => console.log("Edit user", user.id)}
+                        >
+                          <EditIcon size={20} fill="#979797" />
+                        </IconButton>
+                      </Tooltip>
+                      <Tooltip
+                        content="Delete user"
+                        color="error"
+                        onClick={() => deleteTransaction(data.id)}
+                      >
+                        <IconButton>
+                          <DeleteIcon size={20} fill="#FF0080" />
+                        </IconButton>
+                      </Tooltip>
+                    </Col>
+                  </Table.Cell>
                 </Table.Row>
               );
             })}

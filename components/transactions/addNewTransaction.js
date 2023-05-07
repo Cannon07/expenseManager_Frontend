@@ -43,7 +43,7 @@ export const AddNewTransaction = (props) => {
     const currentDate = new Date();
     let currentYear = currentDate.getFullYear();
     let currentMonth = currentDate.getMonth() + 1;
-    let currentDay = currentDate.getDay();
+    let currentDay = currentDate.getDate();
     if (currentMonth < 10) {
       currentMonth = "0" + String(currentMonth);
     }
@@ -105,6 +105,9 @@ export const AddNewTransaction = (props) => {
       <h1>Create a new Transaction</h1>
       <Button.Group>
         <Button
+          color="#2B2F31"
+          auto
+          ghost
           onPress={() => {
             setAddIncome(false);
           }}
@@ -112,6 +115,15 @@ export const AddNewTransaction = (props) => {
           Expense
         </Button>
         <Button
+          color="#2B2F31"
+          auto
+          ghost
+          css={{
+            "& : hover": {
+              background: "$gray100",
+              color: "$gray800",
+            },
+          }}
           onPress={() => {
             setAddIncome(true);
           }}

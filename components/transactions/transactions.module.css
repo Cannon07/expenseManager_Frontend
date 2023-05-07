@@ -1,7 +1,7 @@
 .headerDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /* 
 .inputDate {
@@ -9,6 +9,14 @@
 } */
 
 .newTranContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolTip {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-width: 100%;
 }
