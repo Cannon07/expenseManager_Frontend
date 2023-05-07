@@ -12,9 +12,9 @@ const CategoryComp = (props) => {
       <Container>
         <div className={styles.headerDiv}>
           <h1>Categories</h1>
-          <Button color="success" auto onClick={() => {setShowCat(!showCat)}}>
+          {/* <Button color="success" auto onClick={() => {setShowCat(!showCat)}}>
             + New Category
-          </Button>
+          </Button> */}
         </div>
         {showCat ? 
           <CatTable 
