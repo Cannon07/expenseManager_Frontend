@@ -1,0 +1,19 @@
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerRow {
+    width: 50% !important;
+}
+
+.newCatContainer {
+    width: 100%;
+}
+
+.addButtonDiv {
+    width: 100%;
+    margin-top: 1rem;
+}
