@@ -2,12 +2,15 @@ import { Input, Dropdown, css, useSSR } from "@nextui-org/react";
 import styles from "./getReport.module.css";
 import { useState, useEffect } from "react";
 import { Button } from "carbon-components-react";
+import { useRouter } from "next/router";
 import Link from "next/link";
+
 export const GetReport = () => {
   const [selectedMonth, setSelectedMonth] = useState(new Set(["Select Month"]));
   const [selectedYear, setSelectedYear] = useState(new Set(["Select Year"]));
   const [monthArr, setMonthArr] = useState("");
   const [yearArr, setYearArr] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     setMonthArr(Array.from(selectedMonth)[0]);
@@ -95,15 +98,21 @@ export const GetReport = () => {
         </Dropdown>
       </div>
 
-      <Link
-        href={{
-          pathname:
-            "https://expensemanager20230425005316.azurewebsites.net/api/Transactions/generatepdf",
-          query: { i_month: { monthArr }, i_year: { yearArr } },
+      <button
+        type="button"
+        onClick={() => {
+          router.push({
+            pathname:
+              "https://expensemanager20230425005316.azurewebsites.net/api/Transactions/generatepdf",
+            query: {
+              i_month: monthArr,
+              i_year: yearArr,
+            },
+          });
         }}
       >
         Download
-      </Link>
+      </button>
     </div>
   );
 };

@@ -6,12 +6,15 @@ import { AddNewTransaction } from "./addNewTransaction";
 import { Container, Button } from "@nextui-org/react";
 import { useState } from "react";
 import { GetReport } from "./getReport";
+import NavBar from "../navbar";
+
 const TransactionComp = (props) => {
   console.log(props);
   const [showTrans, setShowTrans] = useState(true);
 
   return (
     <Container>
+      <NavBar />
       <div className={styles.headerDiv}>
         <h1>Transactions</h1>
         <Button
