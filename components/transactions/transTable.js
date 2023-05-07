@@ -71,13 +71,6 @@ export const TransTable = (props) => {
                   )}
                   <Table.Cell>
                     <Col className={styles.toolTip}>
-                      <Tooltip content="Edit user">
-                        <IconButton
-                          onClick={() => console.log("Edit user", user.id)}
-                        >
-                          <EditIcon size={20} fill="#979797" />
-                        </IconButton>
-                      </Tooltip>
                       <Tooltip
                         content="Delete user"
                         color="error"
