@@ -2,7 +2,7 @@ import { Row } from "@nextui-org/react"
 import { useState, useEffect } from "react"
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./addNewCategory.module.css";
-import { Input } from "@nextui-org/react";
+import { Input, Text } from "@nextui-org/react";
 import { Button } from '@nextui-org/react';
 import { GetCategories } from "../constants/urls";
 
@@ -81,15 +81,15 @@ export const AddNewCategory = (props) => {
 
     return (
         <div className={styles.mainContainer}>
-            <h1>Edit {category} Category</h1>
+            <Text h1 className={styles.headingCont}>Edit&nbsp;<Text className={styles.categoryText}>{category} </Text>&nbsp;Category</Text>
             <Row justify="center" className={styles.containerRow}>
                 <div className={styles.newCatContainer}>
                     <div>
-                        <p>Name</p>
+                        <p>Category Name</p>
                         <Input 
                             // color="primary"
                             bordered
-                            placeholder="Enter Name" 
+                            placeholder="Enter Category" 
                             css={inputStyle}
                             onChange={(event) => {
                                 setCategoryName(event.target.value);
@@ -105,7 +105,7 @@ export const AddNewCategory = (props) => {
                             onPress={handleCategory}
                             css={addButtonStyle}
                         >
-                            Add Category
+                            Edit Category
                         </Button>
                     </div>
                 </div>

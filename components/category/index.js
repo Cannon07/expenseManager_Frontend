@@ -11,13 +11,20 @@ const CategoryComp = (props) => {
   const [editId, setEditId] = useState(0);
   const [categoryData, setCategoryData] = useState(props.catData);
 
+  
   return (
     <>
-      <NavBar />
+      <NavBar 
+        page={2}
+      />
       <Container>
         <div className={styles.headerDiv}>
           <h1>Categories</h1>
-          {/* <Button color="success" auto onClick={() => {setShowCat(!showCat)}}> */}
+          {!showCat &&
+          <Button color="success" auto onClick={() => {setShowCat(!showCat)}}>
+            Back
+          </Button>
+          }
         </div>
         {showCat ? (
           <CatTable 

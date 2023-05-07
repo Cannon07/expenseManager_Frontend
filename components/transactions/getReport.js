@@ -1,7 +1,6 @@
-import { Input, Dropdown, css, useSSR } from "@nextui-org/react";
+import { Dropdown, Row, Button } from "@nextui-org/react";
 import styles from "./getReport.module.css";
 import { useState, useEffect } from "react";
-import { Button } from "carbon-components-react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -48,7 +47,7 @@ export const GetReport = () => {
   };
 
   return (
-    <div>
+    <Row justify="center" className={styles.mainContainer}>
       <h1>Generate Report</h1>
       <div className={styles.dropdownDiv}>
         <Dropdown>
@@ -98,8 +97,10 @@ export const GetReport = () => {
         </Dropdown>
       </div>
 
-      <button
-        type="button"
+      <Button
+        className={styles.submitButton}
+        color="success"
+        auto
         onClick={() => {
           router.push({
             pathname:
@@ -112,7 +113,7 @@ export const GetReport = () => {
         }}
       >
         Download
-      </button>
-    </div>
+      </Button>
+    </Row>
   );
 };

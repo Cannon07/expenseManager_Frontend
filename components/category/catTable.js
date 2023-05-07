@@ -59,14 +59,14 @@ export const CatTable = (props) => {
                                     <Table.Cell>{props.catData[data.id - 1]['name']}</Table.Cell>
                                     <Table.Cell>
                                         <Col className={styles.toolTip}>
-                                            <Tooltip content="Edit user">
+                                            <Tooltip content="Edit Category" color="warning" >
                                                 <IconButton
                                                     onClick={()=> {
                                                         props.setEditId(data.id);
                                                         props.setShowCat(false);
                                                     }}
                                                 >
-                                                    <EditIcon size={20} fill="#979797" />
+                                                    <EditIcon size={20} fill="#F5A524" />
                                                 </IconButton>
                                             </Tooltip>
             

@@ -1,7 +1,17 @@
 .amountCard {
     background-color: #2B2F31 !important;
-    color: white !important;
-    
+    color: #F31260 !important;
+}
+
+.amountCardIncome {
+    background-color: #2B2F31 !important;
+    color: #17C964 !important;
+}
+
+
+.amountCardIncome h1 {
+    color: #17C964 !important;
+    margin: 0px;
 }
 
 .amountCard p {
@@ -9,12 +19,17 @@
     margin: 0;
 }
 
-.amountCard h2 {
+.amountCardIncome p {
     color: white !important;
+    margin: 0;
+}
+
+.amountCard h2 {
+    color: #F31260 !important;
 }
 
 .amountCard h1 {
-    color: white !important;
+    color: #F31260 !important;
     margin: 0px;
 }
 
@@ -30,6 +45,18 @@
 
 .divider {
     background: #697177 !important;
+}
+
+.amountText {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.expenseHeader {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 /* .categoryName {

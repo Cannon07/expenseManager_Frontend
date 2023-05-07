@@ -119,7 +119,7 @@ export const AddNewTransaction = (props) => {
 
   return (
     <div className={styles.mainContainer}>
-      <h1>Create a new Transaction</h1>
+      <h1 className={styles.heading}>Create a new Transaction</h1>
       <Button.Group>
         <Button
           color="#2B2F31"
@@ -184,11 +184,13 @@ export const AddNewTransaction = (props) => {
                   onSelectionChange={setSelectedCat}
                 >
                   {props.catData.map((cat) => {
+                    if (cat['id'] !== 7) {
                     return (
                       <Dropdown.Item color="primary" key={cat["name"]}>
                         {cat["name"]}
                       </Dropdown.Item>
                     );
+                    }
                   })}
                 </Dropdown.Menu>
               </Dropdown>

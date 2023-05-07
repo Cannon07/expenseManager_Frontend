@@ -84,7 +84,7 @@ export const TransTable = (props) => {
                   <Table.Cell>
                     <Col className={styles.toolTip}>
                       <Tooltip
-                        content="Delete user"
+                        content="Delete Transaction"
                         color="error"
                         onClick={() => deleteTransaction(data.id)}
                       >

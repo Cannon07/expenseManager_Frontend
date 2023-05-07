@@ -6,7 +6,7 @@
 }
 
 .containerRow {
-    width: 50% !important;
+    width: 40% !important;
 }
 
 .newCatContainer {
@@ -16,4 +16,15 @@
 .addButtonDiv {
     width: 100%;
     margin-top: 1rem;
+}
+
+.headingCont {
+    display: flex;
+    flex-direction: row !important;
+    color: white !important;
+}
+
+.categoryText {
+    color: #0072F5 !important;
+    margin: 0px !important;
 }

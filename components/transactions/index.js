@@ -3,7 +3,7 @@ import { EditIcon } from "./EditIcon";
 import { DeleteIcon } from "./DeleteIcon";
 import { TransTable } from "./transTable";
 import { AddNewTransaction } from "./addNewTransaction";
-import { Container, Button } from "@nextui-org/react";
+import { Container, Button, Row } from "@nextui-org/react";
 import { useState } from "react";
 import { GetReport } from "./getReport";
 import NavBar from "../navbar";
@@ -15,8 +15,11 @@ const TransactionComp = (props) => {
   const [showReportSection, setReportSection] = useState(true);
 
   return (
+    <>
+    <NavBar 
+        page={1}
+      />
     <Container>
-      {/* <NavBar /> */}
       <div className={styles.headerDiv}>
         <h1>Transactions</h1>
         <Button
@@ -26,7 +29,11 @@ const TransactionComp = (props) => {
             setShowTrans(!showTrans);
           }}
         >
-          + New Transaction
+        {showTrans ? 
+          "+ New Transaction"
+          :
+          "Back"
+        }
         </Button>
       </div>
       {showTrans ? (
@@ -36,18 +43,25 @@ const TransactionComp = (props) => {
             catData={props.catData}
             setTransactionData={setTransactionData}
           />
-          {showReportSection && (
-            <Button
-              color="success"
-              auto
-              onPress={() => {
-                setReportSection(!showReportSection);
-              }}
-            >
-              Get Report
-            </Button>
+          {showReportSection ? (
+              <Row justify="center">
+                <Button
+                  className={styles.getReportButton}
+                  color="success"
+                  auto
+                  onPress={() => {
+                    setReportSection(!showReportSection);
+                  }}
+                >
+                  Get Report
+                </Button>
+              </Row>
+            ) : (
+              <Row justify="center">
+                <GetReport />
+              </Row>
           )}
-          <GetReport />
+          
         </div>
       ) : (
         <AddNewTransaction
@@ -59,6 +73,7 @@ const TransactionComp = (props) => {
         />
       )}
     </Container>
+    </>
   );
 };
 
