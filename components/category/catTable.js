@@ -61,7 +61,10 @@ export const CatTable = (props) => {
                                         <Col className={styles.toolTip}>
                                             <Tooltip content="Edit user">
                                                 <IconButton
-                                                    onClick={()=><EditCat key={data.id}/>}
+                                                    onClick={()=> {
+                                                        props.setEditId(data.id);
+                                                        props.setShowCat(false);
+                                                    }}
                                                 >
                                                     <EditIcon size={20} fill="#979797" />
                                                 </IconButton>

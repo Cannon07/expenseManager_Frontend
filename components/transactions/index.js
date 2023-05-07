@@ -11,6 +11,7 @@ import NavBar from "../navbar";
 const TransactionComp = (props) => {
   console.log(props);
   const [showTrans, setShowTrans] = useState(true);
+  const [transactionData, setTransactionData] = useState(props.transData);
 
   return (
     <Container>
@@ -28,9 +29,19 @@ const TransactionComp = (props) => {
         </Button>
       </div>
       {showTrans ? (
-        <TransTable transData={props.transData} catData={props.catData} />
+        <TransTable 
+          transData={transactionData} 
+          catData={props.catData}
+          setTransactionData={setTransactionData}
+        />
       ) : (
-        <AddNewTransaction catData={props.catData} />
+        <AddNewTransaction  
+          catData={props.catData} 
+          transactionData={transactionData}
+          setTransactionData={setTransactionData}
+          showTrans={showTrans}
+          setShowTrans={setShowTrans}
+        />
       )}
       <GetReport />
     </Container>

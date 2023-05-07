@@ -94,10 +94,27 @@ export const AddNewTransaction = (props) => {
       redirect: "follow",
     };
 
+    console.log(props.transactionData);
+
     let response = await fetch(`${GetTransactions}`, requestOptions);
 
     let responseData = await response.json();
+
+    const addedData = {
+        "amount": Number(transactionAmount),
+        "categoryId": addIncome ? 7 : categoryId,
+        "date": `${transactionDate}`,
+        "description": `${transactionDescription}`,
+        "id": responseData['id'],
+        "name": `${transactionName}`,
+        "transactionTypeId": addIncome ? 2 : 1,
+    }
+
+    props.setTransactionData([...props.transactionData, addedData])
+
     console.log(responseData);
+    props.setShowTrans(true);
+    console.log(props.showTrans);
   };
 
   return (

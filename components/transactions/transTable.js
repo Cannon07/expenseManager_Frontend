@@ -14,9 +14,15 @@ export const TransTable = (props) => {
     color: "white",
   };
 
+  const deleteById = id => {
+    props.setTransactionData(oldValues => {
+      return oldValues.filter(fruit => fruit['id'] !== id)
+    })
+  }
+
   const deleteTransaction = async (key) => {
     console.log(key);
-
+    deleteById(key);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append(
@@ -29,6 +35,12 @@ export const TransTable = (props) => {
       headers: myHeaders,
       redirect: "follow",
     };
+
+    for (let i=0; i<props.transData; i++) {
+      if (props.transData[i]['id'] == key) {
+        delete props.transData[i];
+      }
+    }
 
     let response = await fetch(`${GetTransactions}/${key}`, requestOptions);
   };

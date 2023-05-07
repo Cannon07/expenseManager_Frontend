@@ -1,0 +1,42 @@
+.amountCard {
+    background-color: #2B2F31 !important;
+    color: white !important;
+    
+}
+
+.amountCard p {
+    color: white !important;
+    margin: 0;
+}
+
+.amountCard h2 {
+    color: white !important;
+}
+
+.amountCard h1 {
+    color: white !important;
+    margin: 0px;
+}
+
+.categoryCard {
+    background-color: #2B2F31 !important;
+    color: white !important;
+}
+
+.categoryCard p {
+    color: white !important;
+    margin: 0px;
+}
+
+.divider {
+    background: #697177 !important;
+}
+
+/* .categoryName {
+    flex-direction: row !important;
+
+} */
+
+/* .categoryText {
+    width: fit-content !important;
+} */

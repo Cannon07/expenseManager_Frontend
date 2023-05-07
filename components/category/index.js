@@ -8,6 +8,7 @@ import NavBar from "../navbar";
 const CategoryComp = (props) => {
   console.log(props);
   const [showCat, setShowCat] = useState(true);
+  const [editId, setEditId] = useState(0);
 
   return (
     <>
@@ -15,9 +16,8 @@ const CategoryComp = (props) => {
       <Container>
         <div className={styles.headerDiv}>
           <h1>Categories</h1>
-<<<<<<< HEAD
-          {/* <Button color="success" auto onClick={() => {setShowCat(!showCat)}}>
-=======
+          {/* <Button color="success" auto onClick={() => {setShowCat(!showCat)}}> */}
+
           <Button
             color="success"
             auto
@@ -25,14 +25,22 @@ const CategoryComp = (props) => {
               setShowCat(!showCat);
             }}
           >
->>>>>>> 62a0f6c241907235affdcc21879ad1528e218d46
-            + New Category
-          </Button> */}
+
+          </Button>
         </div>
         {showCat ? (
-          <CatTable catData={props.catData} />
+          <CatTable 
+            catData={props.catData} 
+            showCat={showCat}
+            setShowCat={setShowCat}
+            editId={editId}
+            setEditId={setEditId}
+          />
         ) : (
-          <AddNewCategory catData={props.catData} />
+          <AddNewCategory
+            catData={props.catData} 
+            editId={editId}
+          />
         )}
       </Container>
     </>
