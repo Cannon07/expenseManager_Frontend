@@ -1,11 +1,10 @@
 import CategoryComp from "../../components/category/index";
-import { GetTransactions, GetCategories } from "../../components/constants/urls";
+import { GetCategories } from "../../components/constants/urls";
 
 const CategoryPage = (props) => {
     return(
         <div>
             <CategoryComp 
-                // transData={props.transData.data} 
                 catData={props.catData}  
             />
         </div>
