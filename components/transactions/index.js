@@ -12,10 +12,11 @@ const TransactionComp = (props) => {
   console.log(props);
   const [showTrans, setShowTrans] = useState(true);
   const [transactionData, setTransactionData] = useState(props.transData);
+  const [showReportSection, setReportSection] = useState(true);
 
   return (
     <Container>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className={styles.headerDiv}>
         <h1>Transactions</h1>
         <Button
@@ -29,21 +30,34 @@ const TransactionComp = (props) => {
         </Button>
       </div>
       {showTrans ? (
-        <TransTable 
-          transData={transactionData} 
-          catData={props.catData}
-          setTransactionData={setTransactionData}
-        />
+        <div>
+          <TransTable
+            transData={transactionData}
+            catData={props.catData}
+            setTransactionData={setTransactionData}
+          />
+          {showReportSection && (
+            <Button
+              color="success"
+              auto
+              onPress={() => {
+                setReportSection(!showReportSection);
+              }}
+            >
+              Get Report
+            </Button>
+          )}
+          <GetReport />
+        </div>
       ) : (
-        <AddNewTransaction  
-          catData={props.catData} 
+        <AddNewTransaction
+          catData={props.catData}
           transactionData={transactionData}
           setTransactionData={setTransactionData}
           showTrans={showTrans}
           setShowTrans={setShowTrans}
         />
       )}
-      <GetReport />
     </Container>
   );
 };
