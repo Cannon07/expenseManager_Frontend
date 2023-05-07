@@ -10,15 +10,18 @@ export const AddNewCategory = (props) => {
     console.log(props);
     const [categoryName, setCategoryName] = useState("");
     const [category, setCategory] = useState("");
+    const [categoryIndex, setCategoryIndex] = useState(0);
 
     useEffect (() => {
-        let catName;
+        let catName, catIndex;
         for (let i=0; i<props.catData.length; i++) {
             if (props.catData[i]['id'] == props.editId) {
                 catName = props.catData[i]['name']
+                catIndex = i;
             }
         }
         setCategory(catName);
+        setCategoryIndex(catIndex);
     }, [])
 
     const inputStyle = {
@@ -38,38 +41,47 @@ export const AddNewCategory = (props) => {
 
     }
 
+    const handleUpdate = (index, value) => {
+        const newTodos = [...props.catData];
+        newTodos[index]['name'] = value;
+        props.setCategoryData(newTodos);
+      }
+
     const handleCategory = async () => {
         const categoryId = getCategoryIdFromCategory();
+        handleUpdate(categoryIndex, `${categoryName}`)
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Cookie", "ARRAffinity=ab52746cee3d2041a0a4d964700673b28428853c105b7c164f6460eb8129960d; ARRAffinitySameSite=ab52746cee3d2041a0a4d964700673b28428853c105b7c164f6460eb8129960d");
 
         var raw = JSON.stringify({
+            "id": props.editId,
             "name": `${categoryName}`
         });
 
         console.log(raw);
         
         var requestOptions = {
-            method: 'POST',
+            method: 'PUT',
             headers: myHeaders,
             body: raw,
             redirect: 'follow'
         };
 
         let response = await fetch(
-            `${GetCategories}`,
+            `${GetCategories}/${props.editId}`,
             requestOptions
         )
 
-        let responseData = await response.json()
-        console.log(responseData);
+        props.setShowCat(true);
+        // let responseData = await response.json();
+        // console.log(responseData);
     }
 
     return (
         <div className={styles.mainContainer}>
-            <h1>Edit {} Category</h1>
+            <h1>Edit {category} Category</h1>
             <Row justify="center" className={styles.containerRow}>
                 <div className={styles.newCatContainer}>
                     <div>

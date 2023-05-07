@@ -9,6 +9,7 @@ const CategoryComp = (props) => {
   console.log(props);
   const [showCat, setShowCat] = useState(true);
   const [editId, setEditId] = useState(0);
+  const [categoryData, setCategoryData] = useState(props.catData);
 
   return (
     <>
@@ -17,20 +18,10 @@ const CategoryComp = (props) => {
         <div className={styles.headerDiv}>
           <h1>Categories</h1>
           {/* <Button color="success" auto onClick={() => {setShowCat(!showCat)}}> */}
-
-          <Button
-            color="success"
-            auto
-            onClick={() => {
-              setShowCat(!showCat);
-            }}
-          >
-
-          </Button>
         </div>
         {showCat ? (
           <CatTable 
-            catData={props.catData} 
+            catData={categoryData} 
             showCat={showCat}
             setShowCat={setShowCat}
             editId={editId}
@@ -40,6 +31,8 @@ const CategoryComp = (props) => {
           <AddNewCategory
             catData={props.catData} 
             editId={editId}
+            setShowCat={setShowCat}
+            setCategoryData={setCategoryData}
           />
         )}
       </Container>
