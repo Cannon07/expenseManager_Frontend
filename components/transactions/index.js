@@ -21,7 +21,7 @@ const TransactionComp = (props) => {
       />
     <Container>
       <div className={styles.headerDiv}>
-        <h1>Transactions</h1>
+        <h1 className={styles.transHeader}>Transactions</h1>
         <Button
           color="success"
           auto

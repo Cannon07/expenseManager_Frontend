@@ -85,7 +85,7 @@ export const AddNewCategory = (props) => {
             <Row justify="center" className={styles.containerRow}>
                 <div className={styles.newCatContainer}>
                     <div>
-                        <p>Category Name</p>
+                        <p className={styles.catTitle}>Category Name</p>
                         <Input 
                             // color="primary"
                             bordered

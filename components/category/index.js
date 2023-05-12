@@ -19,7 +19,7 @@ const CategoryComp = (props) => {
       />
       <Container>
         <div className={styles.headerDiv}>
-          <h1>Categories</h1>
+          <h1 className={styles.catHeading}>Categories</h1>
           {!showCat &&
           <Button color="success" auto onClick={() => {setShowCat(!showCat)}}>
             Back

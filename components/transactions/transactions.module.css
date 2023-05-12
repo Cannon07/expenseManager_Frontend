@@ -3,6 +3,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.transHeader {
+  font-size: 2em !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  letter-spacing: 0 !important;
+}
 /* 
 .inputDate {
     display: none;

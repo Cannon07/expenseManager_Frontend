@@ -48,7 +48,7 @@ export const GetReport = () => {
 
   return (
     <Row justify="center" className={styles.mainContainer}>
-      <h1>Generate Report</h1>
+      <h1 className={styles.getReportHeading}>Generate Report</h1>
       <div className={styles.dropdownDiv}>
         <Dropdown>
           <Dropdown.Button solid color="primary">
