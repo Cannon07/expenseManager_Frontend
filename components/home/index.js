@@ -1,4 +1,4 @@
-import { Card, Text, Grid, Button, Container } from "@nextui-org/react";
+import { Card, Text, Grid, Container } from "@nextui-org/react";
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 import NavBar from "../navbar";
@@ -202,22 +202,22 @@ const HomeComp = (props) => {
                                     </Button>
                                 );
                             })}  */}
-                            <Doughnut
+                            {/* <Doughnut
                                data={categorydata}
                                width={200}
                                height={200}
-                            />
+                            /> */}
                         </Card.Body>
                     </Card>
                 </Grid>
                 <Grid xs={8}>
                     <Card className={styles.amountCard} variant="flat">
                       <Card.Body>
-                        <Line
+                        {/* <Line
                           data={data}
                           width={400}
                           height={200}
-                        />
+                        /> */}
                       </Card.Body>
                     </Card>
                 </Grid>

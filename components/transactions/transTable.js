@@ -1,5 +1,4 @@
 import { Table, Row, Col, Tooltip } from "@nextui-org/react";
-import { EditIcon } from "./EditIcon";
 import { DeleteIcon } from "./DeleteIcon";
 import { IconButton } from "./IconButton";
 import styles from "./transactions.module.css";

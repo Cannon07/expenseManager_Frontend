@@ -1,31 +1,8 @@
 import { Table, Row, Col, Tooltip } from "@nextui-org/react";
 import { EditIcon } from "../transactions/EditIcon";
-import { DeleteIcon } from "../transactions/DeleteIcon";
 import { IconButton } from "../transactions/IconButton";
 import styles from "./categories.module.css";
 import { GetCategories } from "../constants/urls";
-import {EditCat} from './editCat'
-
-
-
-const deleteCategory = async (key) => {
-    console.log(key);
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Cookie", "ARRAffinity=ab52746cee3d2041a0a4d964700673b28428853c105b7c164f6460eb8129960d; ARRAffinitySameSite=ab52746cee3d2041a0a4d964700673b28428853c105b7c164f6460eb8129960d"
-    );
-
-    var requestOptions = {
-        method: "DELETE",
-        headers: myHeaders,
-        redirect: "follow",
-      };
-  
-      let response = await fetch(`${GetCategories}/${key}`, requestOptions);
-}
-
-
 
 export const CatTable = (props) => {
     const headerStyle = {

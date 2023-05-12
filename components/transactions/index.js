@@ -1,6 +1,4 @@
 import styles from "./transactions.module.css";
-import { EditIcon } from "./EditIcon";
-import { DeleteIcon } from "./DeleteIcon";
 import { TransTable } from "./transTable";
 import { AddNewTransaction } from "./addNewTransaction";
 import { Container, Button, Row } from "@nextui-org/react";

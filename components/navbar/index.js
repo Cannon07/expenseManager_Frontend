@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navbar, Button, Link, Text, useTheme } from "@nextui-org/react";
+import { Navbar, Text, useTheme } from "@nextui-org/react";
 import styles from "./index.module.css";
 
 const NavBar = (props) => {

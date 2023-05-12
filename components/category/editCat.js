@@ -1,18 +1,15 @@
 import { Row } from "@nextui-org/react"
-import { useState, useMemo } from "react"
+import { useState } from "react"
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./addNewCategory.module.css";
 import { Input } from "@nextui-org/react";
 import { Button } from '@nextui-org/react';
-import { GetCategories } from "../constants/urls";
 
 export const EditCategory = ({key}) => {
 
     const [categoryName, setCategoryName] = useState("");
    
     const handleCategory = async () => {
-
-    
     }
 
     return (

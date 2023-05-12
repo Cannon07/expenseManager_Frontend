@@ -2,7 +2,6 @@ import { Dropdown, Row, Button } from "@nextui-org/react";
 import styles from "./getReport.module.css";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export const GetReport = () => {
   const [selectedMonth, setSelectedMonth] = useState(new Set(["Select Month"]));

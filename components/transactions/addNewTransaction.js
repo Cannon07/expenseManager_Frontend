@@ -1,9 +1,8 @@
 import { Row } from "@nextui-org/react";
 import { useState, useMemo } from "react";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./addNewTransaction.module.css";
-import { Input, Dropdown, css } from "@nextui-org/react";
+import { Input, Dropdown } from "@nextui-org/react";
 import { Textarea } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { GetTransactions } from "../constants/urls";
