@@ -213,11 +213,11 @@ const HomeComp = (props) => {
                 <Grid xs={8}>
                     <Card className={styles.amountCard} variant="flat">
                       <Card.Body>
-                        {/* <Line
+                        <Line
                           data={data}
                           width={400}
                           height={200}
-                        /> */}
+                        />
                       </Card.Body>
                     </Card>
                 </Grid>
